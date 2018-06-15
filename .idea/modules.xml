@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app_main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app_main.iml" group="app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app_test.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app_test.iml" group="app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cyk-2nf.iml" filepath="$PROJECT_DIR$/.idea/modules/cyk-2nf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cyk-2nf_main.iml" filepath="$PROJECT_DIR$/.idea/modules/cyk-2nf_main.iml" group="cyk-2nf" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cyk-2nf_test.iml" filepath="$PROJECT_DIR$/.idea/modules/cyk-2nf_test.iml" group="cyk-2nf" />
+    </modules>
+  </component>
+</project>

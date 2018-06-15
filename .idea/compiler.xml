@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="app_main" target="1.8" />
+      <module name="app_test" target="1.8" />
+      <module name="cyk-2nf_main" target="1.8" />
+      <module name="cyk-2nf_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
