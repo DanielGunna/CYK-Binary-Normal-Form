@@ -31,14 +31,14 @@ public class GrammarReader {
 
     private GrammarWrapper convertXmlToObject(String xmlFile) throws Exception {
         JSONObject jsonObject;
-        GrammarWrapper automaton = null;
+        GrammarWrapper grammarWrapper = null;
         try {
             jsonObject = XML.toJSONObject(xmlFile);
-            automaton = new Gson().fromJson(cleanUpJson(jsonObject.toString()), GrammarWrapper.class);
+            grammarWrapper = new Gson().fromJson(cleanUpJson(jsonObject.toString()), GrammarWrapper.class);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return automaton;
+        return grammarWrapper;
     }
 
     private String cleanUpJson(String xmlContent) {
