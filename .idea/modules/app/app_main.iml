@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
-  <component name="ExternalSystem" externalSystem="GRADLE" externalSystemModuleGroup="com.gunna" externalSystemModuleType="sourceSet" externalSystemModuleVersion="1.0-SNAPSHOT" linkedProjectId=":app:main" linkedProjectPath="$MODULE_DIR$/../../../app" rootProjectPath="$MODULE_DIR$/../../.." />
+  <component name="ExternalSystem" externalSystem="GRADLE" externalSystemModuleGroup="com.gunna" externalSystemModuleType="sourceSet" externalSystemModuleVersion="1.0-SNAPSHOT" linkedProjectId="app:main" linkedProjectPath="$MODULE_DIR$/../../../app" rootProjectPath="$MODULE_DIR$/../../../app" />
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/../../../app/out/production/classes" />
     <exclude-output />
@@ -10,5 +10,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: org.json:json:20090211" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.7" level="project" />
   </component>
 </module>
