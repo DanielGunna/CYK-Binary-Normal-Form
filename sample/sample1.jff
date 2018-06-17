@@ -1,24 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Created with JFLAP 6.4.--><structure>
 	<type>grammar</type>
-	<!--The list of productionWrappers.-->
-	<productionWrapper>
+	<!--The list of productions.-->
+	<production>
 		<left>S</left>
 		<right>AB</right>
-	</productionWrapper>
-	<productionWrapper>
+	</production>
+	<production>
 		<left>A</left>
 		<right>aAb</right>
-	</productionWrapper>
-	<productionWrapper>
+	</production>
+	<production>
 		<left>A</left>
 		<right>ab</right>
-	</productionWrapper>
-	<productionWrapper>
+	</production>
+	<production>
 		<left>B</left>
 		<right>bBc</right>
-	</productionWrapper>
-	<productionWrapper>
+	</production>
+	<production>
 		<left>B</left>
 		<right>bc</right>
-	</productionWrapper>
+	</production>
+	<production>
+		<left>C</left>
+		<right>c</right>
+	</production>
+	<production>
+		<left>C</left>
+		<right>ABCSD</right>
+	</production>
+	<production>
+		<left>D</left>
+		<right>aB</right>
+	</production>
 </structure>

@@ -9,7 +9,7 @@ import java.io.FileReader;
 
 public class GrammarReader {
 
-    public GrammarStructure readGrammarFromFile(String file) {
+    public Grammar readGrammarFromFile(String file) {
         try {
             BufferedReader fileReader = new BufferedReader(new FileReader(file));
             StringBuilder reader = new StringBuilder();
@@ -24,8 +24,12 @@ public class GrammarReader {
         return null;
     }
 
-    private GrammarStructure fillGrammar(GrammarWrapper grammarWrapper) {
-        return null;
+    private Grammar fillGrammar(GrammarWrapper grammarWrapper) {
+        Grammar grammar = new Grammar();
+        for(ProductionWrapper pw : grammarWrapper.getGrammarStructure().getProductionWrappers()){
+            grammar.addProduction(new Production(pw));
+        }
+        return grammar;
     }
 
 
@@ -34,14 +38,12 @@ public class GrammarReader {
         GrammarWrapper grammarWrapper = null;
         try {
             jsonObject = XML.toJSONObject(xmlFile);
-            grammarWrapper = new Gson().fromJson(cleanUpJson(jsonObject.toString()), GrammarWrapper.class);
+            grammarWrapper = new Gson().fromJson(jsonObject.toString(), GrammarWrapper.class);
         } catch (Exception e) {
             e.printStackTrace();
         }
         return grammarWrapper;
     }
 
-    private String cleanUpJson(String xmlContent) {
-        return xmlContent;
-    }
+
 }

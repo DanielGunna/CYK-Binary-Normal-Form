@@ -13,6 +13,11 @@ public class ProductionWrapper {
     @SerializedName("right")
     private String rightSide;
 
+    public ProductionWrapper(String leftSide, String rightSide) {
+        this.leftSide = leftSide;
+        this.rightSide = rightSide;
+    }
+
     public String getLeftSide() {
         return leftSide;
     }

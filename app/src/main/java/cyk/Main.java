@@ -10,7 +10,9 @@ public class Main {
         chooser.addChoosableFileFilter(new FileNameExtensionFilter("Arquivos JFLAP4", ".jff"));
         int returned = chooser.showOpenDialog(null);
         if (returned == JFileChooser.APPROVE_OPTION) {
-            new GrammarReader().readGrammarFromFile(chooser.getSelectedFile().getAbsolutePath());
+            new CykChecker().checkSentence("",
+                    new GrammarReader().readGrammarFromFile(chooser.getSelectedFile().getAbsolutePath()));
         }
+
     }
 }
