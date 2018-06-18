@@ -1,16 +1,15 @@
 package cyk;
 
-import cyk.Grammar;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
 
 public class CykChecker {
 
 
+    private ArrayList<Production> convertedProductions;
+
     private Grammar convertTo2NF(Grammar grammar) {
+        convertedProductions = new ArrayList<>();
         Grammar converted = new Grammar();
         for (Production p : grammar.getProductions()) {
             if (p.getNonTerminals().size() > 2) {
@@ -21,23 +20,28 @@ public class CykChecker {
     }
 
     private List<Production> convertProduction(Production p) {
-        ArrayList<String> processed = new ArrayList<>();
-        List<Production> production = new ArrayList<>();
-        String proc = p.getRightSide();
-        for (int count = 1; count < p.getRightSide().length(); count = (p.getRightSide().length() % 2 == 0 ? count + 2 : count + 1)) {
-            String prev = String.valueOf(p.getRightSide().charAt(count - 1));
-            String next = String.valueOf(p.getRightSide().charAt(count));
-            if (!processed.contains(prev)) {
-                processed.add(prev);
-                processed.add(next);
-                production.add(new Production(new ProductionWrapper(String.format("%s(%s%s)", p.getName(), prev, next), prev + next)));
-                if (p.getRightSide().length() % 2 != 0)
-                    production.add(new Production(new ProductionWrapper(p.getName(), String.format("%s(%s%s)", p.getName(), prev, next) + p.getRightSide().charAt(count + 1))));
-            }else{
-                
-            }
+        rightDerivation(getProductionAsNode(p, "X"), 0);
+        return convertedProductions;
+    }
+
+    private Node getProductionAsNode(Production p, String nameR) {
+        Production right = new Production(new ProductionWrapper(p.getRightSide().length() == 2 ?
+                String.valueOf(p.getRightSide().charAt(p.getRightSide().length() - 1)) : nameR,
+                p.getRightSide().substring(1, p.getRightSide().length())));
+        Production left = new Production(String.valueOf(p.getRightSide().charAt(0)));
+        return new Node(p, new Node(left, null, null), new Node(right, null, null));
+    }
+
+    private void rightDerivation(Node node, int coutName) {
+        Production p = node.getProduction();
+        Production pr = node.getRight().getProduction();
+        Production pl = node.getLeft().getProduction();
+        if (p.getRightSide().length() > 2) {
+            convertedProductions.add(new Production(new ProductionWrapper(p.getName(), pl.getName() + pr.getName())));
+            rightDerivation(getProductionAsNode(node.getRight().getProduction(), "X_" + coutName), ++coutName);
+        } else if (pr.getRightSide().length() == 1) {
+            convertedProductions.add(new Production(new ProductionWrapper(p.getName(), pl.getName() + pr.getName())));
         }
-        return null;
     }
 
 

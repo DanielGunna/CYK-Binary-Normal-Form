@@ -40,13 +40,7 @@ public class Production {
 
     @Override
     public String toString() {
-        return "Production{" +
-                "name='" + name + '\'' +
-                ", terminals=" + terminals +
-                ", nonTerminals=" + nonTerminals +
-                ", isReference=" + isReference +
-                ", rightSide='" + rightSide + '\'' +
-                '}';
+        return String.format("%s -> %s", name, rightSide);
     }
 
     public boolean isReference() {

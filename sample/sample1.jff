@@ -27,10 +27,14 @@
 	</production>
 	<production>
 		<left>C</left>
-		<right>ABCSD</right>
+		<right>ABCDE</right>
 	</production>
 	<production>
 		<left>D</left>
 		<right>aB</right>
+	</production>
+	<production>
+		<left>E</left>
+		<right>eE</right>
 	</production>
 </structure>
