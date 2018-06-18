@@ -34,7 +34,7 @@ public class CykChecker {
         Production left = new Production(String.valueOf(p.getRightSide().charAt(0)));
         return new Node(p, new Node(left, null, null), new Node(right, null, null));
     }
-
+    //FIXME implementar de maneira iterativa ao inves de recursiva  
     private void rightDerivation(Node node, int coutName) {
         Production p = node.getProduction();
         Production pr = node.getRight().getProduction();
