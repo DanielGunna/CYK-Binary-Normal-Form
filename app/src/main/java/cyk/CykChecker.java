@@ -9,17 +9,20 @@ public class CykChecker {
     private ArrayList<Production> convertedProductions;
 
     private Grammar convertTo2NF(Grammar grammar) {
-        convertedProductions = new ArrayList<>();
         Grammar converted = new Grammar();
         for (Production p : grammar.getProductions()) {
             if (p.getNonTerminals().size() > 2) {
                 convertProduction(p);
+                converted.addProductions(convertedProductions);
+            } else {
+                converted.addProduction(p);
             }
         }
         return converted;
     }
 
     private List<Production> convertProduction(Production p) {
+        convertedProductions = new ArrayList<>();
         rightDerivation(getProductionAsNode(p, "X"), 0);
         return convertedProductions;
     }
